@@ -18,7 +18,7 @@ String.prototype.pad = function(len, str){
     var output = this.valueOf();
 
     while(output.length < len){
-        output += str;
+        output = str + output;
     }
 
     return output;
