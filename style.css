@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #505050;
+    background-color: #000000;
+}
+
+.h_now {
+    color:red;
+}
+
+.m_now {
+    color:red;
+}
+
+.s_now {
+    color:red;
+}
+
+.always_r {
+    color:red;
+}
+
+.regular {
+    color: #505050;
+}
