@@ -13,12 +13,12 @@ Number.prototype.zf = function(len){
 };
 
 //Give String a padding method.
-String.prototype.pad = function(len, string){
+String.prototype.pad = function(len, str){
 
     var output = this.valueOf();
 
     while(output.length < len){
-        output += string;
+        output += str;
     }
 
     return output;
