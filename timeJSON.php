@@ -12,8 +12,9 @@ date_default_timezone_set('America/Chicago');
 
 echo json_encode(
     array(
-        'hour'   => date('H'),
+        'hour'   => date('h'),
         'minute' => date('i'),
-        'second' => date('s')
+        'second' => date('s'),
+        'meridiem' => date('a')
     )
 );

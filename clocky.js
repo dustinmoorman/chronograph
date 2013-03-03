@@ -26,6 +26,12 @@
      */
     var $second;
 
+    var $second_map;
+
+    var $minute_map;
+
+    var $hour_map;
+
     /**
      * Executes when the document is ready. This is the
      * kick off point for the clock.
@@ -35,6 +41,12 @@
         $hour   = $('#hour');
         $minute = $('#minute');
         $second = $('#second');
+        $second_map = get60RegisterMap('s');
+        $minute_map = get60RegisterMap('m');
+        $hour_map = get24RegisterMap();
+
+        $('span').addClass('regular');
+        $('#ar').attr('class','always_r');
 
         if(document.getElementById('time')){
 
@@ -47,6 +59,150 @@
             });
         }
     });
+
+    function get60RegisterMap(ms){
+        return {
+            '1': {'x': '#'+ms+'1' },
+            '2': {'x': '#'+ms+'2'},
+            '3': {'x': '#'+ms+'3'},
+            '4': {'x': '#'+ms+'4'},
+            '5': {'x': '#'+ms+'5'},
+            '6': {'x': '#'+ms+'6'},
+            '7': {'x': '#'+ms+'7'},
+            '8': {'x': '#'+ms+'8'},
+            '9': {'x': '#'+ms+'9'},
+            '10': {'x': '#'+ms+'10'},
+            '11': {'x': '#'+ms+'11'},
+            '12': {'x': '#'+ms+'12'},
+            '13': {'x': '#'+ms+'13'},
+            '14': {'x': '#'+ms+'14'},
+            '15': {'x': '#'+ms+'15'},
+            '16': {'x': '#'+ms+'16'},
+            '17': {'x': '#'+ms+'17'},
+            '18': {'x': '#'+ms+'18'},
+            '19': {'x': '#'+ms+'19'},
+            '20': {'x': '#'+ms+'20'},
+            '21': {'x': '#'+ms+'1', 'y': '#'+ms+'20'},
+            '22': {'x': '#'+ms+'2', 'y': '#'+ms+'20'},
+            '23': {'x': '#'+ms+'3', 'y': '#'+ms+'20'},
+            '24': {'x': '#'+ms+'4', 'y': '#'+ms+'20'},
+            '25': {'x': '#'+ms+'5', 'y': '#'+ms+'20'},
+            '26': {'x': '#'+ms+'6', 'y': '#'+ms+'20'},
+            '27': {'x': '#'+ms+'7', 'y': '#'+ms+'20'},
+            '28': {'x': '#'+ms+'8', 'y': '#'+ms+'20'},
+            '29': {'x': '#'+ms+'9', 'y': '#'+ms+'20'},
+            '30': {'x': '#'+ms+'30', 'y' : null},
+            '31': {'x': '#'+ms+'1', 'y': '#'+ms+'30'},
+            '32': {'x': '#'+ms+'2', 'y': '#'+ms+'30'},
+            '33': {'x': '#'+ms+'3', 'y': '#'+ms+'30'},
+            '34': {'x': '#'+ms+'4', 'y': '#'+ms+'30'},
+            '35': {'x': '#'+ms+'5', 'y': '#'+ms+'30'},
+            '36': {'x': '#'+ms+'6', 'y': '#'+ms+'30'},
+            '37': {'x': '#'+ms+'7', 'y': '#'+ms+'30'},
+            '38': {'x': '#'+ms+'8', 'y': '#'+ms+'30'},
+            '39': {'x': '#'+ms+'9', 'y': '#'+ms+'30'},
+            '40': {'x': '#'+ms+'40', 'y' : null},
+            '41': {'x': '#'+ms+'1', 'y': '#'+ms+'40'},
+            '42': {'x': '#'+ms+'2', 'y': '#'+ms+'40'},
+            '43': {'x': '#'+ms+'3', 'y': '#'+ms+'40'},
+            '44': {'x': '#'+ms+'4', 'y': '#'+ms+'40'},
+            '45': {'x': '#'+ms+'5', 'y': '#'+ms+'40'},
+            '46': {'x': '#'+ms+'6', 'y': '#'+ms+'40'},
+            '47': {'x': '#'+ms+'7', 'y': '#'+ms+'40'},
+            '48': {'x': '#'+ms+'8', 'y': '#'+ms+'40'},
+            '49': {'x': '#'+ms+'9', 'y': '#'+ms+'40'},
+            '50': {'x': '#'+ms+'50', 'y' : null},
+            '51': {'x': '#'+ms+'1', 'y': '#'+ms+'50'},
+            '52': {'x': '#'+ms+'2', 'y': '#'+ms+'50'},
+            '53': {'x': '#'+ms+'3', 'y': '#'+ms+'50'},
+            '54': {'x': '#'+ms+'4', 'y': '#'+ms+'50'},
+            '55': {'x': '#'+ms+'5', 'y': '#'+ms+'50'},
+            '56': {'x': '#'+ms+'6', 'y': '#'+ms+'50'},
+            '57': {'x': '#'+ms+'7', 'y': '#'+ms+'50'},
+            '58': {'x': '#'+ms+'8', 'y': '#'+ms+'50'},
+            '59': {'x': '#'+ms+'9', 'y': '#'+ms+'50'},
+            '0': { 'x': null, 'y' : null}
+        };
+    }
+
+    function get24RegisterMap(){
+        return {
+            '1': {'x': '#h1' },
+            '2': {'x': '#h2'},
+            '3': {'x': '#h3'},
+            '4': {'x': '#h4'},
+            '5': {'x': '#h5'},
+            '6': {'x': '#h6'},
+            '7': {'x': '#h7'},
+            '8': {'x': '#h8'},
+            '9': {'x': '#h9'},
+            '10': {'x': '#h10'},
+            '11': {'x': '#h11'},
+            '12': {'x': '#h12'},
+            '13': {'x': '#h13'},
+            '14': {'x': '#h14'},
+            '15': {'x': '#h15'},
+            '16': {'x': '#h16'},
+            '17': {'x': '#h17'},
+            '18': {'x': '#h18'},
+            '19': {'x': '#h19'},
+            '20': {'x': '#h20'},
+            '21': {'x': '#h1', 'y': '#h20'},
+            '22': {'x': '#h2', 'y': '#h20'},
+            '23': {'x': '#h3', 'y': '#h20'},
+            '24': {'x': '#noon'}
+        };
+    }
+
+    function managePeripherals(minsec,v){
+
+        if(v != 0){
+            $('#'+minsec).attr('class', 's_now');
+            $('#'+minsec+'_plus').attr('class', 's_now');
+        }
+
+        var minsec_s = $('#'+minsec+'_s');
+
+        if(v > 1){
+            minsec_s.attr('class', 's_now');
+        } else {
+            minsec_s.attr('class', 'regular');
+        }
+    }
+
+    function setMeridiem(){
+        if(clock_data.meridiem == 'am'){
+            $('#morning').attr('class', 'h_now');
+        } else if(clock_data.meridiem == 'pm' && clock_data.hour < 5 ) {
+            $('#afternoon').attr('class', 'h_now');
+        } else {
+            $('#evening').attr('class', 'h_now');
+        }
+    }
+
+    function changeColor(map, hms){
+
+        managePeripherals('sec',parseInt(clock_data.second.toString(),10));
+        managePeripherals('min',parseInt(clock_data.minute.toString(),10));
+        setMeridiem();
+
+        $('#'+hms+'_container').children().attr('class', 'regular');
+
+        if(map.hasOwnProperty('x')){
+            var thisx = $(map.x);
+            if(thisx.attr('class') == 'regular'){
+                thisx.toggleClass('regular '+hms+'_now');
+            }
+        }
+
+        if(map.hasOwnProperty('y')){
+            var thisy = $(map.y);
+
+            if(thisy.attr('class') == 'regular'){
+                thisy.toggleClass('regular '+hms+'_now');
+            }
+        }
+    }
 
     /**
      * This is the beating heart of the clock. It uses
@@ -63,7 +219,7 @@
 
                 clock_data.minute = 0;
 
-                if(++clock_data.hour > 23) clock_data.hour = 0;
+                if(++clock_data.hour > 11) clock_data.hour = 0;
 
                 $hour.text(clock_data.hour.zf(2));
             }
@@ -72,6 +228,16 @@
 
             getCurrentTime();
         }
+
+        var $clean_s = parseInt(clock_data.second.toString(),10);
+        var $clean_m = parseInt(clock_data.minute.toString(),10);
+        var $clean_h = parseInt(clock_data.hour.toString(),10);
+
+        console.log(JSON.stringify($hour_map[$clean_h],null, 4));
+
+        changeColor($second_map[$clean_s], 's');
+        changeColor($minute_map[$clean_m], 'm');
+        changeColor($hour_map[$clean_h], 'h');
 
         $second.text(clock_data.second.zf(2));
         clock_data.second++;
@@ -95,7 +261,8 @@
                 clock_data = {
                     'hour':   parseInt(data.hour),
                     'minute': parseInt(data.minute),
-                    'second': parseInt(data.second)
+                    'second': parseInt(data.second),
+                    'meridiem': data.meridiem
                 };
             }
             else{
