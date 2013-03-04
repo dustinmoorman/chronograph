@@ -233,8 +233,6 @@
         var $clean_m = parseInt(clock_data.minute.toString(),10);
         var $clean_h = parseInt(clock_data.hour.toString(),10);
 
-        console.log(JSON.stringify($hour_map[$clean_h],null, 4));
-
         changeColor($second_map[$clean_s], 's');
         changeColor($minute_map[$clean_m], 'm');
         changeColor($hour_map[$clean_h], 'h');
