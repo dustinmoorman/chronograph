@@ -73,9 +73,9 @@
 
         if(document.getElementById('time')){
 
-            clock_data.hour   = parseInt($hour.text());
-            clock_data.minute = parseInt($minute.text());
-            clock_data.second = parseInt($second.text());
+            clock_data.hour   = parseInt($hour.text(),10);
+            clock_data.minute = parseInt($minute.text(),10);
+            clock_data.second = parseInt($second.text(),10);
 
             getCurrentTime(function(){
                 setTimeDisplay();
@@ -304,9 +304,9 @@
 
             if(dataType == 'object'){
                 clock_data = {
-                    'hour':   parseInt(data.hour),
-                    'minute': parseInt(data.minute),
-                    'second': parseInt(data.second),
+                    'hour':   parseInt(data.hour,10),
+                    'minute': parseInt(data.minute,10),
+                    'second': parseInt(data.second,10),
                     'meridiem': data.meridiem
                 };
             }
