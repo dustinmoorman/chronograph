@@ -59,10 +59,6 @@
 
             $Minutes = clone $Seconds;
 
-            $Seconds->setHMS('s');
-            $Minutes->setHMS('m');
-
-
             $Hours = new SpanGenerator(
                 array(
                     '1' => 'one',
@@ -78,6 +74,9 @@
                     '11' => 'eleven'
                 )
             );
+
+            $Seconds->setHMS('s');
+            $Minutes->setHMS('m');
             $Hours->setHMS('h');
 
         ?>
