@@ -71,7 +71,8 @@
                     '8' => 'eight',
                     '9' => 'nine',
                     '10' => 'ten',
-                    '11' => 'eleven'
+                    '11' => 'eleven',
+                    '12' => 'twelve'
                 )
             );
 
@@ -82,16 +83,21 @@
         ?>
 
         <div id="epic_container">
-            <p id="s_container" style="display: inline;"><?php echo $Seconds->getTextOutput(); ?></p>
+            <p id="s_container" style="display: inline;">
+	            <?php echo $Seconds->getTextOutput(); ?>
+            </p>
             <span id="sec">second</span><span id="sec_s">s</span>
             <span id="sec_plus">and</span>
-            <p id="m_container" style="display: inline;"><?php echo $Minutes->getTextOutput(); ?></p>
+            <p id="m_container" style="display: inline;">
+	            <?php echo $Minutes->getTextOutput(); ?>
+            </p>
             <span id="min">minute</span><span id="min_s">s</span>
             <span id="min_plus">past</span>
             <p id="h_container" style="display: inline;">
                 <span id="midn">midnight</span>
                 <?php echo $Hours->getTextOutput(); ?>
-             <span id="noon">noon</span></p>
+                <span id="noon">noon</span>
+            </p>
             <span id='ar' class="always_r">in the</span>
             <span id="morning">morning</span>
             <span id="afternoon">afternoon</span>

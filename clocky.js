@@ -26,10 +26,33 @@
      */
     var $second;
 
+    /**
+     * Holds a map object, which contains a collection of key value
+     * pairs. The key holds the current time value for seconds, the
+     * value holds an object which contains up to two internal key and
+     * value pairs that represent which ID's need to be lit up to represent
+     * the second's value in the clock face.
+     *
+     * @example
+     *
+     * [second_map] ----------------
+     *  |
+     *  |        -[x: fourty]
+     *  |-[43]--|
+     *  |        -[y: three]
+     *   ---------------------------
+     */
     var $second_map;
 
+    /**
+     * Similar in operation to the $second_map, as seen above, but
+     * holds the map for minutes.
+     */
     var $minute_map;
 
+    /**
+     * Same as the above two, only less internal items mapped.
+     */
     var $hour_map;
 
     /**
@@ -60,8 +83,15 @@
         }
     });
 
+    /**
+     * Gets a map with 60 internal components. Used for
+     * minutes and seconds.
+     * @param ms
+     * @return Object
+     */
     function get60RegisterMap(ms){
         return {
+            '0': { 'x': null, 'y' : null},
             '1': {'x': '#'+ms+'1' },
             '2': {'x': '#'+ms+'2'},
             '3': {'x': '#'+ms+'3'},
@@ -120,11 +150,14 @@
             '56': {'x': '#'+ms+'6', 'y': '#'+ms+'50'},
             '57': {'x': '#'+ms+'7', 'y': '#'+ms+'50'},
             '58': {'x': '#'+ms+'8', 'y': '#'+ms+'50'},
-            '59': {'x': '#'+ms+'9', 'y': '#'+ms+'50'},
-            '0': { 'x': null, 'y' : null}
+            '59': {'x': '#'+ms+'9', 'y': '#'+ms+'50'}
         };
     }
 
+    /**
+     * Gets a map with 12 internal components.
+     * @return Object
+     */
     function get24RegisterMap(){
         return {
             '1': {'x': '#h1' },
@@ -154,22 +187,31 @@
         };
     }
 
-    function managePeripherals(minsec,v){
+    /**
+     * Lights up 'and' and 's' for minutes or seconds.
+     * @param min_or_sec
+     * @param v
+     */
+    function managePeripherals(min_or_sec,v){
+
+        var m_or_s = minsec == 'min' ? 'm' : 's';
+        var min_or_sec_s = $('#'+min_or_sec+'_s');
 
         if(v != 0){
-            $('#'+minsec).attr('class', 's_now');
-            $('#'+minsec+'_plus').attr('class', 's_now');
+            $('#'+min_or_sec).attr('class', m_or_s+'_now');
+            $('#'+min_or_sec+'_plus').attr('class', m_or_s+'_now');
         }
 
-        var minsec_s = $('#'+minsec+'_s');
-
         if(v > 1){
-            minsec_s.attr('class', 's_now');
+            min_or_sec_s.attr('class', m_or_s+'_now');
         } else {
-            minsec_s.attr('class', 'regular');
+            min_or_sec_s.attr('class', 'regular');
         }
     }
 
+    /**
+     * Sets the morning/afternoon/evening indicator.
+     */
     function setMeridiem(){
         if(clock_data.meridiem == 'am'){
             $('#morning').attr('class', 'h_now');
@@ -180,6 +222,11 @@
         }
     }
 
+   /**
+    * Handles class toggling for hours, minutes, and seconds
+    * @param map
+    * @param hms
+    */
     function changeColor(map, hms){
 
         managePeripherals('sec',parseInt(clock_data.second.toString(),10));
