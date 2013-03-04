@@ -27,44 +27,7 @@
 
         <?php
 
-            class SpanGenerator
-            {
-                private $numbers_with_text = array();
-                private $hms;
-
-                public function __construct(array $numbers_with_text)
-                {
-                    $this->numbers_with_text = $numbers_with_text;
-                    krsort($this->numbers_with_text);
-                }
-
-                private function getSpan($id, $contents)
-                {
-                    return '<span id="' . $id . '">' . $contents . '</span>';
-                }
-
-                function getTextOutput()
-                {
-                    $output = '';
-
-                    if(in_array($this->hms, array('h','m','s')))
-                    {
-                        foreach($this->numbers_with_text as $numbers => $text)
-                        {
-                            $output .= $this->getSpan($this->hms . $numbers, $text) . ' ';
-                        }
-                    }
-
-                    return $output;
-                }
-
-                public function setHMS($hms)
-                {
-                    $this->hms = $hms;
-                }
-            }
-
-
+            require_once 'SpanGenerator.php';
 
             $Seconds = new SpanGenerator(
                 array(
