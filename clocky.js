@@ -194,7 +194,7 @@
      */
     function managePeripherals(min_or_sec,v){
 
-        var m_or_s = minsec == 'min' ? 'm' : 's';
+        var m_or_s = min_or_sec == 'min' ? 'm' : 's';
         var min_or_sec_s = $('#'+min_or_sec+'_s');
 
         if(v != 0){
