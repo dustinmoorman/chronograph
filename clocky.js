@@ -171,7 +171,7 @@
             '9': {'x': '#h9'},
             '10': {'x': '#h10'},
             '11': {'x': '#h11'},
-            '12': {'x': '#h12'}
+            '0': {'x': '#h12'}
         };
     }
 
@@ -224,13 +224,16 @@
         $('#'+hms+'_container').children().attr('class', 'regular');
 
         if(map.hasOwnProperty('x')){
+
             var thisx = $(map.x);
+
             if(thisx.attr('class') == 'regular'){
                 thisx.toggleClass('regular '+hms+'_now');
             }
         }
 
         if(map.hasOwnProperty('y')){
+
             var thisy = $(map.y);
 
             if(thisy.attr('class') == 'regular'){
