@@ -66,7 +66,7 @@
         $second = $('#second');
         $second_map = get60RegisterMap('s');
         $minute_map = get60RegisterMap('m');
-        $hour_map = get24RegisterMap();
+        $hour_map   = get12RegisterMap();
 
         $('span').addClass('regular');
         $('#ar').attr('class','always_r');
@@ -158,7 +158,7 @@
      * Gets a map with 12 internal components.
      * @return Object
      */
-    function get24RegisterMap(){
+    function get12RegisterMap(){
         return {
             '1': {'x': '#h1' },
             '2': {'x': '#h2'},
@@ -171,19 +171,7 @@
             '9': {'x': '#h9'},
             '10': {'x': '#h10'},
             '11': {'x': '#h11'},
-            '12': {'x': '#h12'},
-            '13': {'x': '#h13'},
-            '14': {'x': '#h14'},
-            '15': {'x': '#h15'},
-            '16': {'x': '#h16'},
-            '17': {'x': '#h17'},
-            '18': {'x': '#h18'},
-            '19': {'x': '#h19'},
-            '20': {'x': '#h20'},
-            '21': {'x': '#h1', 'y': '#h20'},
-            '22': {'x': '#h2', 'y': '#h20'},
-            '23': {'x': '#h3', 'y': '#h20'},
-            '24': {'x': '#noon'}
+            '12': {'x': '#h12'}
         };
     }
 
