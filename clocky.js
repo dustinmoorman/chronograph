@@ -202,6 +202,9 @@
      * Sets the morning/afternoon/evening indicator.
      */
     function setMeridiem(){
+
+        $('#meridien_container').children().attr('class', 'regular');
+
         if(clock_data.meridiem == 'am'){
             $('#morning').attr('class', 'h_now');
         } else if(clock_data.meridiem == 'pm' && clock_data.hour < 5 ) {

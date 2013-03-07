@@ -94,9 +94,11 @@
                 <span id="noon">noon</span>
             </p>
             <span id='ar' class="always_r">in the</span>
-            <span id="morning">morning</span>
-            <span id="afternoon">afternoon</span>
-            <span id='evening'>evening</span>
+            <p id="meridien_container" style="display:inline;">
+                <span id="morning">morning</span>
+                <span id="afternoon">afternoon</span>
+                <span id='evening'>evening</span>
+            </p>
         </div>
     </body>
 </html>
