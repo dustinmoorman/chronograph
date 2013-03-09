@@ -1,4 +1,4 @@
 chronograph
 ===========
 
-An awesome clock
+An awesome JavaScript/PHP clock.
