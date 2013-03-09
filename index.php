@@ -89,9 +89,7 @@
             <span id="min">minute</span><span id="min_s">s</span>
             <span id="min_plus">past</span>
             <p id="h_container" style="display: inline;">
-                <span id="midn">midnight</span>
                 <?php echo $Hours->getTextOutput(); ?>
-                <span id="noon">noon</span>
             </p>
             <span id='ar' class="always_r">in the</span>
             <p id="meridien_container" style="display:inline;">
