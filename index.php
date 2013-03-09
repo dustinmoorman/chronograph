@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Chronograph</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="css/style.css" />
         <!--
             @author Dustin Moorman <dustin.moorman@gmail.com>
             Chronograph index page.
@@ -17,12 +17,12 @@
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="typeAugmentation.js"></script>
-        <script src="clocky.js"></script>
+        <script src="js/typeAugmentation.js"></script>
+        <script src="js/clocky.js"></script>
 
         <?php
 
-            require_once 'SpanGenerator.php';
+            require_once 'classes/SpanGenerator.php';
 
             $Seconds = new SpanGenerator(
                 array(
