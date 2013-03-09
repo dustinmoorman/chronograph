@@ -4,7 +4,11 @@
  * chronograph.
  */
 
-//Give Number a zero fill method.
+/**
+ * Give Number a zero fill method.
+ * @param len
+ * @return String
+ */
 Number.prototype.zf = function(len){
 
     if(isNaN(len)) len = 2;
@@ -12,7 +16,13 @@ Number.prototype.zf = function(len){
     return (this + '').pad(len, '0');
 };
 
-//Give String a padding method.
+/**
+ * Pads a String with the supplied str parameter,
+ * to the length defined as len.
+ * @param len
+ * @param str
+ * @return String
+ */
 String.prototype.pad = function(len, str){
 
     var output = this.valueOf();
