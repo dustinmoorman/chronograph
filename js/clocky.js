@@ -186,7 +186,10 @@
         var m_or_s = min_or_sec == 'min' ? 'm' : 's';
         var min_or_sec_s = $('#'+min_or_sec+'_s');
 
-        if(v != 0){
+        if(v == 0 && min_or_sec == 'sec'){
+            $('#'+min_or_sec).attr('class', 'regular');
+            $('#'+min_or_sec+'_plus').attr('class', 'regular');
+        }else if(v != 0){
             $('#'+min_or_sec).attr('class', m_or_s+'_now');
             $('#'+min_or_sec+'_plus').attr('class', m_or_s+'_now');
         }
