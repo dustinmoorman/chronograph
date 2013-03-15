@@ -1,7 +1,7 @@
 chronograph
 ===========
-> **Note:** Compatible with PHP version 5.4.7 and up.
 [dustinmoorman.com](http://www.dustinmoorman.com/)
+> **Note:** Compatible with PHP version 5.4.7 and up.
 
 ## Summary
 
