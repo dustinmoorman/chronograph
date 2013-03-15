@@ -17,7 +17,7 @@ class SpanGenerator
      * Holds a single character 'h', 'm', or 's'.
      * Stands for hours, minutes, or seconds. Will ID the
      * spans based on this.
-     * @var
+     * @var string
      */
     private $hms;
 
