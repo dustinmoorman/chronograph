@@ -1,5 +1,7 @@
 chronograph
 ===========
+![Build Status](https://api.travis-ci.org/dustinmoorman/chronograph.png)
+
 [dustinmoorman.com](http://www.dustinmoorman.com/)
 > **Note:** Compatible with PHP version 5.4.7 and up.
 
