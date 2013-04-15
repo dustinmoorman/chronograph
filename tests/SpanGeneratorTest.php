@@ -1,7 +1,9 @@
 <?php
 /**
  * @author Dustin Moorman <dustin.moorman@gmail.com>
- *
+ * Test for the SpanGenerator object used in the chronograph
+ * to generate HTML Span elements for hours, minutes, and
+ * seconds.
  */
 
 class SpanGeneratorTest extends PHPUnit_Framework_TestCase
