@@ -11,7 +11,7 @@ class SpanGenerator
      * and their textual representation as the value.
      * @var array
      */
-    private $numbers_with_text = array();
+    protected $numbers_with_text = array();
 
     /**
      * Holds a single character 'h', 'm', or 's'.
@@ -19,7 +19,7 @@ class SpanGenerator
      * spans based on this.
      * @var string
      */
-    private $hms;
+    protected $hms;
 
     /**
      * Sets up numbers with text array, sorts them in
@@ -38,7 +38,7 @@ class SpanGenerator
      * @param string $contents
      * @return string
      */
-    private function getSpan($id, $contents)
+    protected function getSpan($id, $contents)
     {
         return '<span id="' . $id . '">' . $contents . '</span>';
     }
