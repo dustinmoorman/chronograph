@@ -1,6 +1,6 @@
 chronograph
 ===========
-![Build Status](https://api.travis-ci.org/dustinmoorman/chronograph.png)
+![Build Status](https://api.travis-ci.org/dustinmoorman/chronograph.png) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dustinmoorman/chronograph/master/LICENSE)
 
 [dustinmoorman.com](http://www.dustinmoorman.com/)
 > **Note:** Compatible with PHP version 5.4.7 and up.
