@@ -50,7 +50,7 @@
 	            '50' => 'fifty'
             ]);
 
-            $Minutes = clone $seconds;
+            $minutes = clone $seconds;
 
             $Hours = new SpanGenerator(
                 array(
@@ -70,7 +70,7 @@
             );
 
             $seconds->setHMS('s');
-            $Minutes->setHMS('m');
+            $minutes->setHMS('m');
             $Hours->setHMS('h');
 
         ?>
@@ -82,7 +82,7 @@
             <span id="sec">second</span><span id="sec_s">s</span>
             <span id="sec_plus">and</span>
             <p id="m_container" style="display: inline;">
-	            <?php echo $Minutes->getTextOutput(); ?>
+	            <?php echo $minutes->getTextOutput(); ?>
             </p>
             <span id="min">minute</span><span id="min_s">s</span>
             <span id="min_plus">past</span>
