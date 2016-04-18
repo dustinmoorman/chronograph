@@ -11,9 +11,9 @@
     </head>
     <body>
         <div id="time">
-            <input type="hidden" id="hour" value="<?php echo date('H'); ?>" />
-            <input type="hidden" id="minute" value="<?php echo date('i'); ?>" />
-            <input type="hidden" id="second" value="<?php echo date('s'); ?>" />
+            <input type="hidden" id="hour" value="<?=date('H')?>" />
+            <input type="hidden" id="minute" value="<?=date('i')?>" />
+            <input type="hidden" id="second" value="<?=date('s')?>" />
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
