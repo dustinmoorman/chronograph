@@ -21,7 +21,6 @@
         <script src="js/clocky.js"></script>
 
         <?php
-
             require_once 'classes/SpanGenerator.php';
 
             $seconds = new SpanGenerator([
