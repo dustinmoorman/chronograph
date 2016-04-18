@@ -24,7 +24,7 @@
 
             require_once 'classes/SpanGenerator.php';
 
-            $Seconds = new SpanGenerator([
+            $seconds = new SpanGenerator([
 	            '1' => 'one',
 	            '2' => 'two',
 	            '3' => 'three',
@@ -50,7 +50,7 @@
 	            '50' => 'fifty'
             ]);
 
-            $Minutes = clone $Seconds;
+            $Minutes = clone $seconds;
 
             $Hours = new SpanGenerator(
                 array(
@@ -69,7 +69,7 @@
                 )
             );
 
-            $Seconds->setHMS('s');
+            $seconds->setHMS('s');
             $Minutes->setHMS('m');
             $Hours->setHMS('h');
 
@@ -77,7 +77,7 @@
 
         <div id="epic_container">
             <p id="s_container" style="display: inline;">
-	            <?php echo $Seconds->getTextOutput(); ?>
+	            <?php echo $seconds->getTextOutput(); ?>
             </p>
             <span id="sec">second</span><span id="sec_s">s</span>
             <span id="sec_plus">and</span>
