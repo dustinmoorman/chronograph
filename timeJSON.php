@@ -10,11 +10,9 @@ header('Content-Type: application/json');
 
 date_default_timezone_set('America/Chicago');
 
-echo json_encode(
-    array(
-        'hour'   => date('h'),
-        'minute' => date('i'),
-        'second' => date('s'),
-        'meridiem' => date('a')
-    )
-);
+echo json_encode([
+    'hour'   => date('h'),
+    'minute' => date('i'),
+    'second' => date('s'),
+    'meridiem' => date('a')
+]);
